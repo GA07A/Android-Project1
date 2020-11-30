@@ -3,16 +3,23 @@ package com.example.finalproject;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ShopFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.example.finalproject.R;
+import com.example.finalproject.item;
+import com.example.finalproject.receyleviewadapter;
+
+import java.util.ArrayList;
+
+
 public class ShopFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -28,37 +35,74 @@ public class ShopFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ShopFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ShopFragment newInstance(String param1, String param2) {
-        ShopFragment fragment = new ShopFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+
+    RecyclerView recyclerView;
+    EditText edit_search;
+    receyleviewadapter recyclerviewadapter;
+    private ArrayList<item> show;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shop, container, false);
+        View view= inflater.inflate(R.layout.fragment_shop, container, false);
+        recyclerView = (RecyclerView) view.findViewById(R.id.recycler);
+        edit_search = (EditText) view.findViewById(R.id.editsearch);
+        edit_search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                inflater(editable.toString());
+            }
+        });
+
+
+        show = new ArrayList<>();
+        show.add(new item(" خبز", "خبز الشوفان مع بذور السمسم", R.drawable.pr));
+        show.add(new item("فطائر", "كاروسان وفطائر البيتزا", R.drawable.ca));
+        show.add(new item("خبز عربي", "خبز 'مفرود'", R.drawable.pr2));
+        show.add(new item(" خبز ", "خبز بماء الفاكهة المخمر", R.drawable.br2));
+        show.add(new item("المحاصيل ", "بعض المحاصيل الشهية", R.drawable.v));
+        show.add(new item(" المحاصيل ", "بعض المحاصيل الشهية", R.drawable.f));
+        show.add(new item("التمور", " صفاوي، خلاص، نانة، نبتة علي", R.drawable.da));
+        show.add(new item("التمور", " سكري، عنبر،عجوة", R.drawable.d));
+
+
+        recyclerviewadapter = new receyleviewadapter(show);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getContext(), 2);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(recyclerviewadapter);
+        recyclerviewadapter.notifyDataSetChanged();
+        return view;
+
     }
+
+    private void inflater(String query) {
+        ArrayList<item> filtered = new ArrayList<>();
+        for (item i : show) {
+
+            if (i.getTital().toLowerCase().contains( query.toLowerCase() )) {
+                filtered.add( i );
+            }
+
+        }
+        recyclerviewadapter.filterlist( filtered );
+
+
+
+    }
+
+
 }

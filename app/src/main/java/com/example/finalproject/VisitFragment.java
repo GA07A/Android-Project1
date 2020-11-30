@@ -98,8 +98,8 @@ public class VisitFragment extends Fragment {
 
     private void setUpViewPager(ViewPager viewPager) {
         SectionPagerAdapter adapter =new SectionPagerAdapter(getChildFragmentManager());
-        adapter.addFragment(new Visit1Fragment(),"زيارات صباحية");
-        adapter.addFragment(new Visit2Fragment(),"زيارات مسائية");
+        adapter.addFragment(new Visit1Fragment(),"زيارات مسائية");
+        adapter.addFragment(new Visit2Fragment(),"زيارات صباحية");
         viewPager.setAdapter(adapter);
     }
 }

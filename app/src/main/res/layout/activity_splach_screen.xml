@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/g1"
+    android:orientation="vertical"
     tools:context=".SplachScreen">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="360dp"
+        android:background="@color/White"
+        android:layout_height="369dp"
+        android:layout_centerInParent="true"
+        android:elevation="5dp"
+
+
+        >
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:text="مرحبًا بكم في تطبيق مزرعتي
+نسعد بزيارتكم لنا في المزرعة ومشاهدة المناظر الخلابة
+ نتمنا منكم زيارة المزرعة لرؤية جميع مالدينا ..
+وجودكم يسُرنا"
+            android:layout_height="match_parent">
+
+
+        </TextView>
+</LinearLayout>
+
+
+
+</RelativeLayout>

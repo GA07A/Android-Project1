@@ -1,3 +1,4 @@
+
 package com.example.finalproject;
 
 import android.os.Bundle;
@@ -8,13 +9,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Visit2Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class Visit2Fragment extends Fragment {
-
+    ImageSlider imageSlider ;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -59,6 +66,22 @@ public class Visit2Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_visit2, container, false);
+        View v = inflater.inflate(R.layout.fragment_visit2, container, false);
+
+//       obj.v.findViewByid(R.id.slider);
+        imageSlider = v.findViewById(R.id.slide);
+
+
+        List<SlideModel> slideModels = new ArrayList<>();
+
+        slideModels.add(new SlideModel(R.drawable.moen2, "تغذية الحيوانات من حصاد المزرعة  "));
+        slideModels.add(new SlideModel(R.drawable.morn6, "\"تغذية الحيوانات من حصاد المزرعة "));
+        slideModels.add(new SlideModel(R.drawable.morn4, "شروق الشمس في المزرعة "));
+        slideModels.add(new SlideModel(R.drawable._2_copy, "حقول البرسيم "));
+
+
+        imageSlider.setImageList(slideModels,true);
+        return v;
     }
 }
+

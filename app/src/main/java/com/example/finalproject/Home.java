@@ -27,10 +27,9 @@ public class Home extends AppCompatActivity {
         // menu add
 
         List<MenuItem> menuItems = new ArrayList<>();
-        menuItems.add(new MenuItem("الصفحة الرئيسية ", R.drawable._32));
-//        menuItems.add(new MenuItem("المتجر", R.drawable._32));
-        menuItems.add(new MenuItem("الزيارات",R.drawable._32));
-        menuItems.add(new MenuItem("المعرض", R.drawable._32));
+        menuItems.add(new MenuItem("الصفحة الرئيسية ", R.drawable.g1));
+        menuItems.add(new MenuItem("الزيارات",R.drawable.g1));
+        menuItems.add(new MenuItem("المعرض", R.drawable.g1));
 
 
 
@@ -64,7 +63,7 @@ public class Home extends AppCompatActivity {
                         break;
                     }
                     case 2: {
-                        fragmentClass = MarketFragment.class;
+                        fragmentClass = ShopFragment.class;
                         break;
 
 

@@ -1,14 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white_greyish"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:orientation="vertical"
     tools:context=".Visit2Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="650dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="vertical">
 
-</FrameLayout>
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:layout_width="match_parent"
+            android:id="@+id/slide"
+            app:auto_cycle="true"
+            app:placeholder="@drawable/background_gray"
+            app:error_image="@drawable/background_gray"
+            app:delay="0"
+            app:period="1000"
+            app:corner_radius="5"
+            android:layout_height="300dp"
+
+            >
+
+
+        </com.denzcoskun.imageslider.ImageSlider>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" ></TextView>
+
+        <androidx.cardview.widget.CardView
+
+
+            android:layout_width="360dp"
+
+
+            android:layout_height="200dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="178dp"
+                android:gravity="center"
+                android:paddingStart="35dp"
+                android:text=" تتيح لك الزيارة الصباحية العديد من الانشطه والفعاليات مثل روئيه المحميات و الحقول الزراعية وزراعة النخيل و الأشجار وزيارة الحيوانات ايضاً يمكنك زياره متجر الموجود داخل المزرعة… "
+                android:textSize="19sp">
+
+
+            </TextView>
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+
+
+
+
+
+

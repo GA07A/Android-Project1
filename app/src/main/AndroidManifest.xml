@@ -7,16 +7,16 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="مزرعتي"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".Profile"></activity>
         <activity android:name=".Home" />
-        <activity android:name=".SplachScreen" />
+        <activity android:name=".Dashboard" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".SignUp" />
-        <activity android:name=".Profile" />
-        <activity android:name=".Dashboard">
+        <activity android:name=".SplachScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

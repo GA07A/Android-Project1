@@ -19,7 +19,7 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="أهلا وسهلا"
+            android:text=""
             android:layout_centerInParent="true"
             android:textSize="34sp"
             android:textColor="@color/White"
@@ -32,7 +32,8 @@
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="8"
+        android:layout_gravity="center"
+        android:layout_weight="5"
         android:columnCount="2"
         android:rowCount="2"
         android:alignmentMode="alignMargins"
@@ -46,6 +47,7 @@
 
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:id="@+id/card1"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_marginBottom="16dp"
@@ -92,114 +94,19 @@
 
 
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
 
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:id="@+id/card4"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:elevation="8dp"
-            app:cardCornerRadius="8dp"
 
-            >
-            <LinearLayout
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="16dp">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/ic_baseline_login_24">
-
-                </ImageView>
-                <TextView
-                    android:id="@+id/LoginPage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textColor="@color/Black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:text="تسجيل الدخول "
-
-                    >
-
-
-                </TextView>
-
-
-
-
-            </LinearLayout>
-
-
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:elevation="8dp"
-            app:cardCornerRadius="8dp"
-
-            >
-            <LinearLayout
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="16dp">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/ic_baseline_home_24">
-
-                </ImageView>
-                <TextView
-                    android:id="@+id/RegP"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textColor="@color/Black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:text="التسجيل  "
-
-                    >
-
-
-                </TextView>
-
-
-
-
-            </LinearLayout>
-
-
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:elevation="8dp"
 
             app:cardCornerRadius="8dp"
 

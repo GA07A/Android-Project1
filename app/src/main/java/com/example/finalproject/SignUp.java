@@ -9,6 +9,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ public class SignUp extends AppCompatActivity {
     EditText regName , regEmail , regPhone , regPass;
     Button regBtn ;
     TextView login;
+    ImageView imageview;
     FirebaseDatabase firebaseDatabase;
     FirebaseAuth mAuth;
 
@@ -37,13 +39,15 @@ public class SignUp extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        imageview = findViewById(R.id.image1);
+
         regName = findViewById(R.id.NameReg);
         regEmail = findViewById(R.id.EmailReg);
         regPass = findViewById(R.id.PasswordReg);
         regPhone = findViewById(R.id.PhoneReg);
         regBtn = findViewById(R.id.newReg);
         login = findViewById(R.id.swipeLeft);
-        login.setOnClickListener(new View.OnClickListener() {
+        imageview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(SignUp.this,MainActivity.class);
@@ -61,34 +65,36 @@ public class SignUp extends AppCompatActivity {
                 phoneNo = regPhone.getText().toString();
 
                 if (name.isEmpty()) {
-                    regName.setError("Full Name is required!");
+                    regName.setError("الرجاء إدخال الاسم الكامل");
                     regName.requestFocus();
                     return;
                 }
                 if (phoneNo.isEmpty()) {
-                    regPhone.setError("Birthday is required");
+                    regPhone.setError("الرجاء إدخال رقم الجوال");
                     regPhone.requestFocus();
                     return;
+
+
                 }
                 if (email.isEmpty()) {
-                    regEmail.setError("Email is required");
+                    regEmail.setError("الرجاء إدخال البريد الالكتروني");
                     regEmail.requestFocus();
                     return;
                 }
                 if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    regEmail.setError("Please provide valid email");
+                    regEmail.setError("الرجاء إدخال بريد إلكتروني صحيح");
                     regEmail.requestFocus();
                     return;
 
                 }
                 if (password.isEmpty()) {
-                    regPass.setError("Password is required");
+                    regPass.setError("الرجاء إدخال الرقم السري ");
                     regPass.requestFocus();
                     return;
                 }
 
                 if (password.length() < 6) {
-                    regPass.setError("Min password length should be 6 characters!");
+                    regPass.setError("يجب إدخال رقم سري أكثر من 6 أرقام");
                     regPass.requestFocus();
                     return;
 

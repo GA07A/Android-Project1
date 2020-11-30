@@ -3,12 +3,14 @@ package com.example.finalproject;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView SignIn1;
     Button SignIn2 ;
+    ImageView image2;
     EditText userE , userP;
     FirebaseAuth mAuth;
 
@@ -31,17 +34,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
-//        textView = findViewById(R.id.SingUp);
+        image2 = findViewById(R.id.image2);
         SignIn2 = findViewById(R.id.SingIn);
         SignIn1 = findViewById(R.id.swipeRight);
 
-        SignIn1.setOnClickListener(new View.OnClickListener() {
+        image2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),SignUp.class);
                 startActivity(i);
             }
         });
+
         userE = findViewById(R.id.Email);
         userP = findViewById(R.id.Password);
 
@@ -86,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                         //redirect to user profile
 
                         Intent i = new Intent(MainActivity.this, Dashboard.class);
+//                        cardView1.setVisibility(View.VISIBLE);
                         Toast.makeText(getApplicationContext(),"تم التسجيل بنجاح",Toast.LENGTH_LONG).show();
                         startActivity(i);
                     } else {

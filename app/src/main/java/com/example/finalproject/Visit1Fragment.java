@@ -8,12 +8,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Visit1Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class Visit1Fragment extends Fragment {
+    ImageSlider imageSlider1 ;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +41,7 @@ public class Visit1Fragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Visit1Fragment.
+     * @return A new instance of fragment Visit1ragment.
      */
     // TODO: Rename and change types and number of parameters
     public static Visit1Fragment newInstance(String param1, String param2) {
@@ -59,6 +66,20 @@ public class Visit1Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_visit1, container, false);
+        View v = inflater.inflate(R.layout.fragment_visit1, container, false);
+
+
+        imageSlider1 = v.findViewById(R.id.slide1);
+
+
+
+        List<SlideModel> slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel(R.drawable.nig1, "إطلاله مسائية على الغروب  "));
+        slideModels.add(new SlideModel(R.drawable.nig2, "مشاهدة النجوم عبر التلسكوب "));
+        slideModels.add(new SlideModel(R.drawable.nig3, " "));
+        slideModels.add(new SlideModel(R.drawable.nig4, "نجم نوبلا المنفجر "));
+
+        imageSlider1.setImageList(slideModels,true);
+        return v;
     }
 }

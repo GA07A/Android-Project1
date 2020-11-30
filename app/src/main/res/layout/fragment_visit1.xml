@@ -1,14 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_gray"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:orientation="vertical"
     tools:context=".Visit1Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="650dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="vertical">
 
-</FrameLayout>
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:layout_width="match_parent"
+            android:id="@+id/slide1"
+            app:auto_cycle="true"
+            app:placeholder="@drawable/background_gray"
+            app:error_image="@drawable/background_gray"
+            app:delay="0"
+            app:period="1000"
+            app:corner_radius="5"
+            android:layout_height="300dp">
+
+
+
+        </com.denzcoskun.imageslider.ImageSlider>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/L_gray"
+            ></TextView>
+
+        <androidx.cardview.widget.CardView
+
+            android:background="@color/L_gray"
+            android:layout_width="360dp"
+
+
+            android:layout_height="200dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/L_gray"
+                android:gravity="center"
+                android:paddingStart="35dp"
+                android:text="تتيح لك الزيارة المسائية الجلوس على اطلالة غروب الشمس وايضاً يمكنك مشاهده عبر التلسكوب الفضاء والنجوم و الاحداث السنوية للفضاء"
+                android:textColor="@color/white"
+                android:textSize="19sp"></TextView>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

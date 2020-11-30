@@ -48,7 +48,7 @@ public class Profile extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         user = mAuth.getCurrentUser();
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
 // final
         reference = firebaseDatabase.getReference(mAuth.getUid());
@@ -70,7 +70,7 @@ public class Profile extends AppCompatActivity {
                                 if(task.isSuccessful()){
                                     Toast.makeText(getApplicationContext(),"تم حذف الحساب بنجاح",
                                             Toast.LENGTH_LONG).show();
-                                    Intent i = new Intent(getApplicationContext(),Dashboard.class);
+                                    Intent i = new Intent(getApplicationContext(),SignUp.class);
                                     startActivity(i);
                                 }else {
                                     Toast.makeText(getApplicationContext(),task.getException().getMessage(),Toast.LENGTH_LONG).show();
@@ -115,7 +115,7 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(Profile.this, Dashboard.class));
+                startActivity(new Intent(Profile.this, SignUp.class));
             }
 
 
@@ -137,7 +137,7 @@ public class Profile extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(getApplicationContext(), "تم تغيير الرقم السري بنجاح", Toast.LENGTH_LONG).show();
-                            finish();
+
                         } else {
                             Toast.makeText(getApplicationContext(), "فشل في تغيير الرقم السري", Toast.LENGTH_LONG).show();
                         }
